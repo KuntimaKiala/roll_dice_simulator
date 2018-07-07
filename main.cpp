@@ -1,18 +1,13 @@
-/*
-Author : Kuntima
-Description : An AI rolls the dice, for 2 payer the first to have two 6 wins
-data : 7/7/2017
-*/
+
 /*
 Author : Kuntima
 Description : An AI that simulates a roll dice between two persons, the first person first have ten six's is the winer
 Date : 7/7/2017
 
-
-
 */
 
 
+// importing the necessary libraries
 #include <iostream>
 #include <random>
 #include <string>
@@ -26,13 +21,13 @@ using namespace std ;
 int main(){
 
 
-        //Initialization
-        string player1  ;
-        int hit_player1  =  0;
-        string player2  ;
-        int hit_player2 = 0 ;
-        int dicevalue ;
-        int conter = 1 ;
+        //Initialization of necessary varibles
+        string player1  ;       // the variable that will keep the name of the player 1
+        int hit_player1  =  0; // the variable thas stores the number of hits of player 1
+        string player2  ;      // the variable that will keep the name of the player 2
+        int hit_player2 = 0 ;  // the variable thas stores the number of hits of player 2
+        int dicevalue ;        // the value of the dice
+        int conter = 0 ;      // the counter
 
         random_device device ;  // generate the seed
         mt19937_64 generator(device()) ; // generate the PseudoRandoNumberGenerator
@@ -53,32 +48,31 @@ int main(){
 
 
                 if (conter%2==0) { // if the module is 0, player 2 plays
-                dicevalue = diceroll(generator) ;
-                cout << player2 <<" rolled :" << dicevalue << endl ;
-                    if (dicevalue == 6){
-                    hit_player2++ ;
+                	dicevalue = diceroll(generator) ; // the value of the dice roll for player 2
+                	cout << player2 <<" rolled :" << dicevalue << endl ; // print the value played
+                    if (dicevalue == 6){ // hit for player 6
+                    hit_player2++ ; // stock the number of hits
 
 
 
                     }
                 }
                 if (conter%2!=0){ // if the module is 1, player 1 plays
-                    dicevalue = diceroll(generator) ;
-                    cout << player1 <<" rolled :" << dicevalue << endl ;
-
-
-                    if(dicevalue == 6){
-                    hit_player1++ ;
-
-                    }
+                    dicevalue = diceroll(generator) ; // the value of the dice roll for player 1
+                    cout << player1 <<" rolled :" << dicevalue << endl ; // print the value played
+                    if (dicevalue == 6){ // hit for player 
+                    hit_player1++ ; 	// stock the number of hits
 
                 }
+            }
 
-                conter++ ;
+                conter++ ; // keep counting till we will have a winer
 
             } ;
 
 
+
+        // tell us who won the game
         if (hit_player1 == 2){
             cout << player1<<" is the Winer\n" ;
             cout <<"Congrats :" ;
@@ -93,9 +87,9 @@ int main(){
         }
         if ((hit_player1 != 2) and (hit_player2 != 2)){
 
-        cout << "We have a tigh" ;
-        cout <<hit_player1 << endl;
-        cout <<hit_player2 ;
+        cout << "something went wrong" ;
+        return -1
+
 
         }
 
