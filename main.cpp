@@ -60,7 +60,7 @@ int main(){
                 if (conter%2!=0){ // if the module is 1, player 1 plays
                     dicevalue = diceroll(generator) ; // the value of the dice roll for player 1
                     cout << player1 <<" rolled :" << dicevalue << endl ; // print the value played
-                    if (dicevalue == 6){ // hit for player 
+                    if (dicevalue == 6){ // hit for player
                     hit_player1++ ; 	// stock the number of hits
 
                 }
@@ -88,7 +88,7 @@ int main(){
         if ((hit_player1 != 2) and (hit_player2 != 2)){
 
         cout << "something went wrong" ;
-        return -1
+        return -1 ;
 
 
         }
