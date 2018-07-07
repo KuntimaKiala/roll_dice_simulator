@@ -2,7 +2,7 @@
 /*
 Author : Kuntima
 Description : An AI that simulates a roll dice between two persons, the first person first have ten six's is the winer
-Date : 7/7/2017
+Date : 7/7/2018
 
 */
 
